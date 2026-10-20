@@ -81,12 +81,7 @@
           "width": 0.19
         }
       ],
-      "drc_exclusions": [
-        [
-          "courtyards_overlap|60320291|34914399|c86b3f39-ec43-482e-a453-236e7ffd7b09|fd8ad10b-89db-4d63-b2fa-b818a62caf41",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -708,22 +703,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "HAT+.kicad_sch",
-        "name": "HAT+",
+        "filename": "LEGHAT+.kicad_sch",
+        "name": "LEGHAT+",
         "uuid": "930e3c40-e68c-46d6-8e4e-88a8be0433a8"
       }
     ],
-    "used_designators": "R1-4,J2-3,F1,RV1,D1-3,C1-5,PS1,Q1-2,U3-4,SW1",
+    "used_designators": "R1-4,J2-3,F1,RV1,D1-3,C1-5,PS1,Q1-2,U3-4,SW1,1",
     "variants": []
   },
   "sheets": [
     [
       "930e3c40-e68c-46d6-8e4e-88a8be0433a8",
-      "HAT+"
-    ],
-    [
-      "01889de2-01b8-4068-856c-382e31394986",
-      "HAT+"
+      "LEGHAT+"
     ]
   ],
   "text_variables": {},
