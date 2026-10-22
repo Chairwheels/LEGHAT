@@ -2399,12 +2399,9 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Schottky"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Device:D_Schottky_AAK"
 			(pin_names
-				(offset 1.016)
+				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -2422,7 +2419,7 @@
 					)
 				)
 			)
-			(property "Value" "D_Schottky"
+			(property "Value" "D_Schottky_AAK"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2454,7 +2451,7 @@
 					)
 				)
 			)
-			(property "Description" "Schottky diode"
+			(property "Description" "Schottky diode, anode on pins 1 and 2"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2465,7 +2462,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "diode Schottky"
+			(property "ki_keywords" "diode Schottky SCHDPAK"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2487,7 +2484,7 @@
 					)
 				)
 			)
-			(symbol "D_Schottky_0_1"
+			(symbol "D_Schottky_AAK_0_1"
 				(polyline
 					(pts
 						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
@@ -2512,9 +2509,20 @@
 						(type none)
 					)
 				)
+				(circle
+					(center 2.54 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy 3.81 2.54) (xy 2.54 2.54) (xy 2.54 0) (xy -1.27 0)
 					)
 					(stroke
 						(width 0)
@@ -2525,11 +2533,11 @@
 					)
 				)
 			)
-			(symbol "D_Schottky_1_1"
+			(symbol "D_Schottky_AAK_1_1"
 				(pin passive line
-					(at -3.81 0 0)
+					(at 5.08 2.54 180)
 					(length 2.54)
-					(name "K"
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2545,7 +2553,7 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
+					(at 5.08 0 180)
 					(length 2.54)
 					(name "A"
 						(effects
@@ -2555,6 +2563,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4465,6 +4491,18 @@
 		(color 0 0 0 0)
 		(uuid "d80149bc-6263-4aa6-abfa-cd0681f3195c")
 	)
+	(junction
+		(at 170.18 22.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dd8eb616-2361-460b-bd47-53d8929d3723")
+	)
+	(junction
+		(at 44.45 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e00b7c9f-6cdd-425a-80b1-81eead46e7fc")
+	)
 	(no_connect
 		(at 256.54 91.44)
 		(uuid "0182ee22-b47f-4a0b-87fe-7f6aaf5ede2d")
@@ -4670,6 +4708,16 @@
 			(type default)
 		)
 		(uuid "17bfb1ea-c769-43de-8782-d533d1cae21a")
+	)
+	(wire
+		(pts
+			(xy 170.18 19.05) (xy 170.18 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17cc890c-b9c4-433d-950e-25d8d5e2ce8e")
 	)
 	(wire
 		(pts
@@ -4963,16 +5011,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 19.05) (xy 162.56 22.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c6b6a5d-8fd9-4f62-8298-23bc17005149")
-	)
-	(wire
-		(pts
 			(xy 186.69 24.13) (xy 190.5 24.13)
 		)
 		(stroke
@@ -5043,16 +5081,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 39.37) (xy 154.94 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87113491-09c9-492a-8afb-192f07b613db")
-	)
-	(wire
-		(pts
 			(xy 186.69 22.86) (xy 186.69 13.97)
 		)
 		(stroke
@@ -5060,6 +5088,16 @@
 			(type default)
 		)
 		(uuid "925f5ef8-3730-4119-bd00-286b33eebf78")
+	)
+	(wire
+		(pts
+			(xy 44.45 24.13) (xy 43.18 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e133e33-31c8-4f15-b49f-70d6e23767ff")
 	)
 	(wire
 		(pts
@@ -5080,16 +5118,6 @@
 			(type default)
 		)
 		(uuid "a3d38bac-b5b5-4670-b9a5-89c4227c9c86")
-	)
-	(wire
-		(pts
-			(xy 52.07 24.13) (xy 53.34 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a60892c2-4848-4acc-8946-fb9089ed5cec")
 	)
 	(wire
 		(pts
@@ -5163,13 +5191,13 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 19.05) (xy 162.56 19.05)
+			(xy 44.45 24.13) (xy 44.45 26.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b09a077d-6962-4830-81ea-82171d5d2e9b")
+		(uuid "b0ad0b1a-a770-4992-b8f5-5d870bc2abbd")
 	)
 	(wire
 		(pts
@@ -5210,6 +5238,16 @@
 			(type default)
 		)
 		(uuid "c066d423-d41c-468b-940e-be90fb189a52")
+	)
+	(wire
+		(pts
+			(xy 179.07 19.05) (xy 170.18 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0e843e7-644c-4fbb-9251-6cccd2c61a50")
 	)
 	(wire
 		(pts
@@ -5273,7 +5311,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 24.13) (xy 44.45 24.13)
+			(xy 44.45 24.13) (xy 45.72 24.13)
 		)
 		(stroke
 			(width 0)
@@ -5293,7 +5331,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 27.94) (xy 154.94 39.37)
+			(xy 154.94 27.94) (xy 154.94 44.45)
 		)
 		(stroke
 			(width 0)
@@ -5303,7 +5341,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 19.05) (xy 24.13 19.05)
+			(xy 24.13 19.05) (xy 35.56 19.05)
 		)
 		(stroke
 			(width 0)
@@ -5692,7 +5730,7 @@
 		(uuid "87e88e84-f0c1-43fb-9e8b-b7c05d70a5a2")
 	)
 	(label "HAT_GND"
-		(at 154.94 39.37 0)
+		(at 154.94 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5750,6 +5788,16 @@
 			(justify left bottom)
 		)
 		(uuid "b8f31f7b-dc14-479e-8ac6-a503d7fa547e")
+	)
+	(label "HAT_GND"
+		(at 162.56 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cf334a31-d9ac-44ca-9ca7-775c7ccd8f58")
 	)
 	(label "HAT_GND"
 		(at 193.04 77.47 0)
@@ -7876,92 +7924,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 48.26 24.13 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d1710d4c-00f7-4694-8e42-f022e92cc449")
-		(property "Reference" "D1"
-			(at 48.5775 17.78 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 48.5775 20.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:TO-277A"
-			(at 48.26 24.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 24.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 48.26 24.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cd045ce2-55a2-4f1b-8f65-39e8f074b1ec")
-		)
-		(pin "2"
-			(uuid "94523bf3-70dc-419d-ae4d-be961de3f5a7")
-		)
-		(instances
-			(project "LEGHAT+SCHEMATIC"
-				(path "/4eca0b44-7895-4de1-b60b-9e70a6799560"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-			(project "LEGHAT+"
-				(path "/930e3c40-e68c-46d6-8e4e-88a8be0433a8"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 256.54 30.48 0)
 		(unit 1)
@@ -8322,6 +8284,88 @@
 			(project "LEGHAT+"
 				(path "/930e3c40-e68c-46d6-8e4e-88a8be0433a8"
 					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky_AAK")
+		(at 49.53 24.13 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ff3eeb75-7d96-4ce8-bbde-481fb12a6fc4")
+		(property "Reference" "D1"
+			(at 48.641 17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Schottky_AAK"
+			(at 52.07 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode, anode on pins 1 and 2"
+			(at 49.53 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "c936d78a-d6b5-4466-86be-9e8abd2b877e")
+		)
+		(pin "1"
+			(uuid "f72b8fe0-3f2f-49a6-845c-cdc32f8ee495")
+		)
+		(pin "2"
+			(uuid "c04cb0b7-04eb-4ac9-9fc2-48f2ee27a37f")
+		)
+		(instances
+			(project "LEGHAT+"
+				(path "/930e3c40-e68c-46d6-8e4e-88a8be0433a8"
+					(reference "D1")
 					(unit 1)
 				)
 			)
