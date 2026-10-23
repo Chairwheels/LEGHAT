@@ -5989,7 +5989,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SSM-120-F-DV:SAMTEC_SSM-120-X-DV"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical"
 			(at 248.92 81.28 0)
 			(hide yes)
 			(show_name no)
