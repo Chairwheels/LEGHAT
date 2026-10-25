@@ -5939,7 +5939,7 @@
 		)
 		(uuid "dc682278-7751-4df0-8831-5772820ef2f3")
 	)
-	(label "USB_Switch"
+	(label "PWR_Switch"
 		(at 172.72 77.47 0)
 		(effects
 			(font
@@ -5969,7 +5969,7 @@
 		)
 		(uuid "f2f7b125-e0ab-4b88-9872-09af6128da4b")
 	)
-	(label "USB_Switch"
+	(label "PWR_Switch"
 		(at 229.87 104.14 0)
 		(effects
 			(font

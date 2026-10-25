@@ -2,7 +2,7 @@
 
 ## Project goal
 
-Design a four-layer Raspberry Pi 5 HAT that powers the Pi through its 40-pin header from a **33.3–37.8 V battery** instead of its USB-C power input. The board uses an isolated DC/DC converter, input protection, and a MOSFET-based backfeed protection stage. It also breaks out SPI for two encoders and a load-cell data-acquisition (DAQ) board, and includes a pushbutton and two LEDs for a planned USB-control interface.
+Design a four-layer Raspberry Pi 5 HAT that powers the Pi through its 40-pin header from a **33.3–37.8 V battery** instead of its USB-C power input. The board uses an isolated DC/DC converter, input protection, and a MOSFET-based backfeed protection stage. It also breaks out SPI for two encoders and a load-cell data-acquisition (DAQ) board, and includes a pushbutton and two LEDs for either USB shutdown or PI Shutdown.
 
 
 ## PCB outline and references
@@ -35,10 +35,10 @@ The designators below follow the current schematic and working parts list. Verif
 | J3 | Molex 55932-0810, 8-circuit MicroClasp header | Peripheral connector for 3.3 V, ground, SPI clock/data, and chip-select signals. |
 | C7 | Vishay VJ0603Y104JXQCW1BC, 100 nF | High frequency decoupling for the peripheral 3.3 V supply near J3. |
 | C8 | Samsung CL10B105KP8NNNC, 1 µF | Local decoupling for the peripheral 3.3 V supply near J3. |
-| SW1 | Omron B3SL-1022P candidate | Pushbutton for the planned USB control interface. |
-| D3 | Lite-On LTST-C191KGKT, green LED | Green USB-control status indicator (`GREEN_LED`). |
-| D4 | Lite-On LTST-C191KRKT, red LED | Red USB-control status indicator (`RED_LED`). |
-| R2, R3 | Yageo AC0603FR-07470RL, 470 Ω | Current-limiting resistors for the green and red LEDs. |
+| SW1 | Omron B3SL-1022P candidate | Pushbutton for the planned shutdown interface. |
+| D3 | Lite-On LTST-C191KGKT, green LED | Green status indicator (`GREEN_LED`). |
+| D4 | Lite-On LTST-C191KRKT, red LED | Red status indicator (`RED_LED`). |
+| R2, R3 | Yageo AC0603FR-07470RL, 470 Ω | Current limiting resistors for the green and red LEDs. |
 
 ## Connections
 
@@ -82,7 +82,7 @@ The Pi header assignments below use the standard Raspberry Pi 40-pin header pino
 | 22 | `RED_LED` | Red LED control / GPIO25 |
 | 35 | `SPI1_MISO` | SPI1 MISO / GPIO19 |
 | 36 | `SPI1_CSn2` | SPI1 chip select 2 / GPIO16 |
-| 37 | `USB_Switch` | USB-control button signal / GPIO26 |
+| 37 | `PWR_Switch` | Shutdown button signal / GPIO26 |
 | 38 | `SPI1_MOSI` | SPI1 MOSI / GPIO20 |
 | 40 | `SPI1_SCLK` | SPI1 clock / GPIO21 |
 

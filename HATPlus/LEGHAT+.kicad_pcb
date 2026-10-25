@@ -1317,7 +1317,7 @@
 		(property "Reference" "SW1"
 			(at -5.38 0 180)
 			(layer "F.SilkS")
-			(uuid "35f635a0-6708-4bcb-8c0a-9d427f54a39f")
+			(uuid "3bcb0c41-251d-49ef-9fa6-a0a5292f0951")
 			(effects
 				(font
 					(size 1 1)
@@ -1330,7 +1330,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "4758f832-5384-4054-bd68-ded78b8bef1e")
+			(uuid "eebc3c97-2bb9-47e9-b90f-8be2ab96a675")
 			(effects
 				(font
 					(size 1 1)
@@ -1343,7 +1343,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "348e4e1f-a281-4e09-b593-9d9fd6bc0ef5")
+			(uuid "759cc996-25b4-4aae-a8e0-9873c45ad3a1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1356,7 +1356,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4fb29097-ddfb-4e01-98d5-d531cf92a67e")
+			(uuid "2ee2e304-6e09-4170-b684-076dd6350fc6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1561,7 +1561,7 @@
 			(at -2.88 -2 90)
 			(size 2.75 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/USB_Switch")
+			(net "/PWR_Switch")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(uuid "80938a3b-f714-449f-8d70-8f5ff1aeab94")
@@ -1570,7 +1570,7 @@
 			(at 2.88 -2 90)
 			(size 2.75 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/USB_Switch")
+			(net "/PWR_Switch")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(uuid "cd04706c-09a5-447c-86a0-60790a3e23c6")
@@ -2067,7 +2067,7 @@
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "6dd73a5e-1f90-4d3e-ad75-e1d3c070193e")
+			(uuid "8bd92b5e-240e-4b05-b4e8-14ecc7744ca6")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -2079,7 +2079,7 @@
 			(at 0 3.8 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a67fb7bc-ec6b-4114-8272-19871d28ed27")
+			(uuid "a78aeab7-7fb4-4b8a-9e84-09c422e678ec")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -2091,7 +2091,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a0bf3161-d7a1-4658-ab10-8625efc8867d")
+			(uuid "c49cfe9b-57c3-4186-82be-9957cb40cd79")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2102,7 +2102,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "17105431-8b18-4fa9-8b98-eb91c4a71d0c")
+			(uuid "ed7f3aa4-25a5-43f4-8c55-350061cad206")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3282,7 +3282,7 @@
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "0cd36908-9938-401a-8154-3a225e53a897")
+			(uuid "a3120648-cebf-4b83-8f8e-634bade0f168")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3294,7 +3294,7 @@
 			(at 0 3.8 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "49313088-be61-4dbf-afe0-ac23886b5552")
+			(uuid "ae898c3d-ab93-4124-8d6b-46dbd0b42afb")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3306,7 +3306,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b297699a-f4d3-4e0f-89f3-00f3c6fc0b4d")
+			(uuid "b34aa554-013a-4830-9b04-d8e3d74d2e05")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3317,7 +3317,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "339cdc58-71b0-42b7-9e15-653a0ae51016")
+			(uuid "20d3f81b-971a-413a-8c0a-ca3b5daabea5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3378,7 +3378,7 @@
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "62fbfe74-dcb6-4153-b6bf-a4909e0496e1")
+			(uuid "e2b8e177-be34-45b8-be22-c91820379b51")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3390,7 +3390,7 @@
 			(at 0 3.8 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "20244a36-6c22-460f-a1fb-4e16be57b769")
+			(uuid "46607fb6-be71-4708-823d-bec631c7ec15")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3402,7 +3402,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8cabc91a-7cc9-4c4a-aa2b-4cbc041d3140")
+			(uuid "7f0ca3c1-2649-4f9e-badd-b3c01c9604ab")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3413,7 +3413,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "beb7fa3d-a787-4df4-9236-4604d8fc9ef4")
+			(uuid "6be9ab3b-b701-4c70-8982-fcf326785b90")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4743,7 +4743,7 @@
 		(property "Reference" "J3"
 			(at 7 -4.9 0)
 			(layer "F.SilkS")
-			(uuid "20b03239-0364-46e1-8b99-422a1f016cba")
+			(uuid "e17d9ffb-12dc-4721-9843-b897b36ef707")
 			(effects
 				(font
 					(size 1 1)
@@ -4754,7 +4754,7 @@
 		(property "Value" "Conn_01x08"
 			(at 7 4.2 0)
 			(layer "F.Fab")
-			(uuid "be84d6d3-b316-45d1-bd8a-0e372ee402ac")
+			(uuid "93c26329-3a1f-4a8a-a36b-f8c0eac7297a")
 			(effects
 				(font
 					(size 1 1)
@@ -4766,7 +4766,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "84cb4689-e21f-4b2b-9560-9b97f6778e33")
+			(uuid "f89b7313-cee9-4d2c-b97d-e28333136985")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4777,7 +4777,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "53826f49-485d-42a6-8241-359723965203")
+			(uuid "8c43c1c9-e70e-4224-95f4-4be4df4a3744")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5178,7 +5178,7 @@
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "9117dfce-1b2b-4d21-ac6c-11f7e4d30a40")
+			(uuid "23a1255b-ed99-4116-b2f5-315ebafb3061")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5190,7 +5190,7 @@
 			(at 0 3.8 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1bac974f-0896-466c-9d26-d3f545d9521c")
+			(uuid "1a558ddc-8148-4f90-8de3-b729faa63b6b")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5202,7 +5202,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8b68ba14-0e72-45fc-a3d6-d4b8b63c5390")
+			(uuid "cef30ebf-2747-42b8-b024-518d8c1180a7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5213,7 +5213,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b8517a38-4aa4-440b-9cd3-86d257a3dd6b")
+			(uuid "b8bf9de7-8c4f-4ffc-971f-3b17230e320e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6060,7 +6060,7 @@
 		(property "Reference" "D1"
 			(at 0 5 180)
 			(layer "F.SilkS")
-			(uuid "a8f0ed9e-9525-422e-9394-e5283921211a")
+			(uuid "b3b1465f-50cc-44c3-827a-409392f1ecdd")
 			(effects
 				(font
 					(size 1 1)
@@ -6072,7 +6072,7 @@
 			(at 0 6 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "c5759ec1-b7fa-430b-8cc0-fd9002c17b9b")
+			(uuid "89ce6525-eded-40bf-aa9b-3f0cf34c5606")
 			(effects
 				(font
 					(size 1 1)
@@ -6085,7 +6085,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f3cd9bf1-d86f-4128-9895-2f26f990f409")
+			(uuid "7117fb55-85f1-4244-a998-031d655703b9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6098,7 +6098,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dfade26c-99cc-4e3d-806b-a1f3a43fd4f0")
+			(uuid "67893013-b5ce-4ea0-b5eb-a3d5536140d3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6736,7 +6736,7 @@
 		(property "Reference" "J1"
 			(at -1.27 2.77 90)
 			(layer "B.SilkS")
-			(uuid "4f9a2e6f-62f7-415f-a9fb-b8ea2ea6f9f6")
+			(uuid "207c3130-f54a-4def-97c2-6c31c5ecb8d3")
 			(effects
 				(font
 					(size 1 1)
@@ -6748,7 +6748,7 @@
 		(property "Value" "Conn_02x20_Odd_Even"
 			(at -1.27 -51.03 90)
 			(layer "B.Fab")
-			(uuid "996964c8-f109-4c1a-b588-a8b450316945")
+			(uuid "fb4cf85c-1e80-4346-bc9d-24e5dfca333d")
 			(effects
 				(font
 					(size 1 1)
@@ -6761,7 +6761,7 @@
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "d068d052-e066-4674-a6e2-15581294707a")
+			(uuid "f8b0039d-e442-4a10-879a-bc56051ad87f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6773,7 +6773,7 @@
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "07506971-8dce-46a7-8118-605052fcaacb")
+			(uuid "2538cd5a-dea0-43d6-abfc-ba5933ec0de7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7380,7 +7380,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "/USB_Switch")
+			(net "/PWR_Switch")
 			(pinfunction "Pin_37_37")
 			(pintype "passive")
 			(uuid "ffc2a339-e87d-44d9-90f1-d7c670e4a344")
@@ -9446,62 +9446,6 @@
 		(uuid "3691ecab-e0f0-4261-9963-c2f7cd5adbef")
 	)
 	(segment
-		(start 59 30.74)
-		(end 56.5 28.24)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "36cd3c66-198a-480a-9029-109060f42b4c")
-	)
-	(segment
-		(start 54.09 8.09)
-		(end 54.09 5.27)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "38f9ecf5-db6a-483b-a7e7-0c6b3991f301")
-	)
-	(segment
-		(start 55.5 27.24)
-		(end 55.5 9.5)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "72325def-d994-4067-ab34-dcd5f3f9c38c")
-	)
-	(segment
-		(start 55.5 33)
-		(end 55.5 27.24)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "827276ee-ea66-4662-a7ff-159c1b6f6426")
-	)
-	(segment
-		(start 59 36.5)
-		(end 55.5 33)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "88edaf6f-4974-48e7-a2c6-5d8bb0c3d0d0")
-	)
-	(segment
-		(start 55.5 9.5)
-		(end 54.09 8.09)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "ade67f40-8951-44ab-adc4-028fdb9411eb")
-	)
-	(segment
-		(start 56.5 28.24)
-		(end 55.5 27.24)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/USB_Switch")
-		(uuid "bce4802e-6e6f-48bb-903b-b7918ad7c9e8")
-	)
-	(segment
 		(start 10.6975 34.16)
 		(end 7.16 34.16)
 		(width 0.15)
@@ -10252,6 +10196,62 @@
 		(layer "F.Cu")
 		(net "/RED_LED")
 		(uuid "f603f812-7f44-4be5-9ae3-7c673e52a69e")
+	)
+	(segment
+		(start 59 30.74)
+		(end 56.5 28.24)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "36cd3c66-198a-480a-9029-109060f42b4c")
+	)
+	(segment
+		(start 54.09 8.09)
+		(end 54.09 5.27)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "38f9ecf5-db6a-483b-a7e7-0c6b3991f301")
+	)
+	(segment
+		(start 55.5 27.24)
+		(end 55.5 9.5)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "72325def-d994-4067-ab34-dcd5f3f9c38c")
+	)
+	(segment
+		(start 55.5 33)
+		(end 55.5 27.24)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "827276ee-ea66-4662-a7ff-159c1b6f6426")
+	)
+	(segment
+		(start 59 36.5)
+		(end 55.5 33)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "88edaf6f-4974-48e7-a2c6-5d8bb0c3d0d0")
+	)
+	(segment
+		(start 55.5 9.5)
+		(end 54.09 8.09)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "ade67f40-8951-44ab-adc4-028fdb9411eb")
+	)
+	(segment
+		(start 56.5 28.24)
+		(end 55.5 27.24)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/PWR_Switch")
+		(uuid "bce4802e-6e6f-48bb-903b-b7918ad7c9e8")
 	)
 	(zone
 		(net "Net-(D1-A-Pad1)")
