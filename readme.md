@@ -1,10 +1,10 @@
 # Raspberry Pi 5 Battery Power HAT
 
-## This project was done in KiCad as I found it easier to work in and had more support throughout the industry as it is second in use only to Altium designer for PCB design tools.
+This project was done in KiCad as I found it easier to work in and had more support throughout the industry as it is second in use only to Altium designer for PCB design tools.
 
 ## Project goal
 
-Design a four-layer Raspberry Pi 5 HAT that powers the Pi through its 40-pin header from a **33.3–37.8 V battery** instead of its USB-C power input. The board uses an isolated DC/DC converter, input protection, and a MOSFET-based backfeed protection stage. It also breaks out SPI for two encoders and a load-cell data-acquisition (DAQ) board, and includes a pushbutton and two LEDs for either USB shutdown or PI Shutdown.
+Design a four-layer Raspberry Pi 5 HAT that powers the Pi through its 40-pin header from a **33.3–37.8 V battery** instead of its USB-C power input. The board uses an isolated DC/DC converter, input protection, and a MOSFET-based backfeed protection. It also breaks out SPI for two encoders and a load-cell data-acquisition (DAQ) board, and includes a pushbutton and two LEDs for either USB or PI Shutdown.
 
 
 ## PCB outline and references
@@ -25,7 +25,7 @@ The designators below follow the current schematic and parts list.
 | D1 | Vishay SS5P10-M3/86A | Series Schottky diode for input reverse polarity protection. |
 | D2 | Vishay SMCJ43A-E3/57T | TVS diode for input transient suppression. |
 | C1 | Samsung CL31B105KCHNNNE, 1 µF | High frequency bypass on the battery/converter input. |
-| C2 | Panasonic EEEFK2A221AM, 220 µF  | Battery side bulk input capacitance. |
+| C2 | Panasonic EEEFK2A221AM, 220 µF  | Battery side bulk input capaciter. |
 | PS1 | TRACO Power THN 30-4811WI | Isolated DC/DC converter from battery voltage to the low-voltage rail. |
 | R1 | Panasonic ERJPB3B4992V, 49.9 kΩ  | Fixed resistor in the converter trim network. |
 | RV1 | Bourns 3224W-1-204E, 200 kΩ  | Adjustable resistor in the converter trim network. |
@@ -47,7 +47,7 @@ The designators below follow the current schematic and parts list.
 ### Power path
 
 1. Battery positive enters at **J2 pin 2**, then passes through **F1** and **D1** to the input of **PS1**.
-2. Battery negative enters at **J2 pin 1** and is labelled `Bat_Neg`. **D2**, **C1**, and **C2** are connected across the battery-side input as shown in the schematic.
+2. Battery negative enters at **J2 pin 1** and is labelled `Bat_Neg`. **D2**, **C1**, and **C2** are connected across the battery side input as shown in the schematic.
 3. **PS1** provides isolated low-voltage output. The input side and output side are seperate circuits and have seperate ground planes on the inner copper layers of the PCB.
 4. **R1/RV1** form the converter trim network. 
 5. **Q2/U4** provide the planned backfeed-protection stage in the form of a MOSFET/Ideal Diode configuration. The protected rail is labelled `HAT_5V0` and feeds the Pi header at J1 pins 2 and 4.
@@ -67,11 +67,11 @@ This table records the signal order shown in the current schematic. It is the pi
 | 7 | `SPI1_MOSI` | Pi-to-peripheral data (Pi output) |
 | 8 | `HAT_GND` | Pi-side ground reference |
 
-The two encoders and the DAQ share `SPI1_SCLK`, `SPI1_MOSI`, and `SPI1_MISO`; each device uses its own chip-select. The load cell connects to the DAQ, not directly to the Pi.
+The two encoders and the DAQ share `SPI1_SCLK`, `SPI1_MOSI`, and `SPI1_MISO`. Each device uses its own chip-select. The load cell connects to the DAQ, then to the Pi.
 
 ### J1 — Raspberry Pi 40-pin header Pinouts
 
-The Pi header assignments below use the standard Raspberry Pi 40-pin header pinout and the intended SPI1 mapping.
+The Pi header assignments below use the standard Raspberry Pi 40-pin header pinout and the SPI1 mapping.
 
 | J1 pin | Intended net / signal | Purpose |
 | ---: | --- | --- |
@@ -88,5 +88,30 @@ The Pi header assignments below use the standard Raspberry Pi 40-pin header pino
 | 38 | `SPI1_MOSI` | SPI1 MOSI / GPIO20 |
 | 40 | `SPI1_SCLK` | SPI1 clock / GPIO21 |
 
-The SPI1 mapping follows the [Raspberry Pi documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html): CE0 on physical pin 12, CE1 on pin 11, CE2 on pin 36, MISO on pin 35, MOSI on pin 38, and SCLK on pin 40. The `SPI1_CSn0`, `SPI1_CSn1`, and `SPI1_CSn2` nets on J1 should connect to the corresponding chip-select signals on J3.
+The SPI1 mapping follows the [Raspberry Pi documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html): CE0 on physical pin 12, CE1 on pin 11, CE2 on pin 36, MISO on pin 35, MOSI on pin 38, and SCLK on pin 40. The `SPI1_CSn0`, `SPI1_CSn1`, and `SPI1_CSn2` nets on J1 should connect to the corresponding chip-select signals on J3. 
+
+## Test Points and PCB Measurement Locations
+
+The PCB includes six numbered test points to simplify power testing and troubleshooting. Ground measurement references are provided by vias connected to the appropriate ground planes.
+
+### Test Point Locations
+
+| Test Point | Net | PCB Location | Purpose |
+| --- | --- | --- | --- |
+| TP1 | `J2-Pin_2` | At J2's battery connection before F1 | Measures the battery voltage before the fuse and input protection. |
+| TP2 | `D1-K (On D1)` | Between F1 and D1 | Measures if the battery voltage passes through the input fuse. |
+| TP3 | `D1-K (On C1` | After D1, near the positive input pin of PS1 | Measures the voltage reaching the TRACO DC/DC converter after input protection. |
+| TP4 | `PS1-+VOUT` | At the converter output, near C3 and the converter-side terminal of Q2 | Measures the converter output before the MOSFET backfeed protection. |
+| TP5 | `HAT_5V0` | On the protected side of Q2, near C5 and J1 | Measures the final 5 V supply delivered to the Raspberry Pi. |
+| TP6 | `HAT_3.3V` | Near J3 pin 1, on the peripheral 3.3 V supply | Makes sure the MOLEX connector receives its 3.3 V supply from the Raspberry Pi. |
+
+### Ground Reference Vias
+
+Two separate ground reference vias are used for measurements:
+
+- **`BAT_NEG` via:** Located between TP1 and D1. Use this as the reference when measuring TP1, TP2, and TP3.
+- **`HAT_GND` via:** Located between TP4 and TP5 near HAT_5V0 net. Use this as the reference when measuring TP4, TP5, and TP6.
+
+
+
 
