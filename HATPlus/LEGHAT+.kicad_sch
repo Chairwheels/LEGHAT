@@ -4504,7 +4504,7 @@
 		(uuid "dd8eb616-2361-460b-bd47-53d8929d3723")
 	)
 	(junction
-		(at 44.45 24.13)
+		(at 43.18 24.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e00b7c9f-6cdd-425a-80b1-81eead46e7fc")
@@ -4691,16 +4691,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 24.13) (xy 35.56 19.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17bfb1ea-c769-43de-8782-d533d1cae21a")
-	)
-	(wire
-		(pts
 			(xy 170.18 19.05) (xy 170.18 22.86)
 		)
 		(stroke
@@ -4841,7 +4831,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 27.94) (xy 24.13 27.94)
+			(xy 20.32 27.94) (xy 19.05 27.94)
 		)
 		(stroke
 			(width 0)
@@ -4938,6 +4928,16 @@
 			(type default)
 		)
 		(uuid "5a42df69-d231-4c18-9fa5-912d625999cc")
+	)
+	(wire
+		(pts
+			(xy 34.29 19.05) (xy 34.29 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dbcd81e-4e82-494e-9037-a82538b91578")
 	)
 	(wire
 		(pts
@@ -5141,7 +5141,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 24.13) (xy 43.18 24.13)
+			(xy 43.18 24.13) (xy 41.91 24.13)
 		)
 		(stroke
 			(width 0)
@@ -5221,7 +5221,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 24.13) (xy 44.45 26.67)
+			(xy 43.18 24.13) (xy 43.18 26.67)
 		)
 		(stroke
 			(width 0)
@@ -5238,6 +5238,16 @@
 			(type default)
 		)
 		(uuid "b1a039d2-5339-4d96-8626-2dba770b35a4")
+	)
+	(wire
+		(pts
+			(xy 52.07 24.13) (xy 53.34 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2bef2d0-281c-4371-8f6a-38f4d953ac5a")
 	)
 	(wire
 		(pts
@@ -5341,7 +5351,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 24.13) (xy 45.72 24.13)
+			(xy 43.18 24.13) (xy 44.45 24.13)
 		)
 		(stroke
 			(width 0)
@@ -5371,7 +5381,7 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 19.05) (xy 35.56 19.05)
+			(xy 24.13 19.05) (xy 34.29 19.05)
 		)
 		(stroke
 			(width 0)
@@ -5438,6 +5448,16 @@
 			(type default)
 		)
 		(uuid "e75fb5af-2925-4b26-bc97-04edb0dcdc7d")
+	)
+	(wire
+		(pts
+			(xy 19.05 25.4) (xy 24.13 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7eb5ed7-2182-4e2c-8f76-37475e32c603")
 	)
 	(wire
 		(pts
@@ -5730,7 +5750,7 @@
 		(uuid "65ccd1c5-dcb3-4219-b840-4e38c198c18e")
 	)
 	(label "Bat_Neg"
-		(at 15.24 27.94 0)
+		(at 20.32 27.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6433,7 +6453,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 29.21 25.4 0)
+		(at 13.97 27.94 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6444,29 +6464,27 @@
 		(fields_autoplaced yes)
 		(uuid "366d2434-3624-4a61-8d9f-c5e8c7062887")
 		(property "Reference" "J2"
-			(at 31.75 25.3999 0)
+			(at 13.97 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 31.75 27.9399 0)
+			(at 13.97 21.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Connector_AMASS:AMASS_XT30UPB-F_1x02_P5.0mm_Vertical"
-			(at 29.21 25.4 0)
+			(at 13.97 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6477,7 +6495,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 25.4 0)
+			(at 13.97 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6488,7 +6506,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 29.21 25.4 0)
+			(at 13.97 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6618,7 +6636,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 39.37 24.13 270)
+		(at 38.1 24.13 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6629,7 +6647,7 @@
 		(fields_autoplaced yes)
 		(uuid "3b4229a3-6612-4280-994a-f0d1355b32e2")
 		(property "Reference" "F1"
-			(at 39.37 17.78 90)
+			(at 38.1 17.78 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6639,7 +6657,7 @@
 			)
 		)
 		(property "Value" "Fuse"
-			(at 39.37 20.32 90)
+			(at 38.1 20.32 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6649,7 +6667,7 @@
 			)
 		)
 		(property "Footprint" "belfuse0680L3000-05:FUSC6125X279N"
-			(at 39.37 22.352 90)
+			(at 38.1 22.352 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6660,7 +6678,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 24.13 0)
+			(at 38.1 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6671,7 +6689,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 39.37 24.13 0)
+			(at 38.1 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8545,7 +8563,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky_AAK")
-		(at 49.53 24.13 180)
+		(at 48.26 24.13 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8555,7 +8573,7 @@
 		(dnp no)
 		(uuid "ff3eeb75-7d96-4ce8-bbde-481fb12a6fc4")
 		(property "Reference" "D1"
-			(at 48.641 17.78 0)
+			(at 47.371 17.78 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8565,7 +8583,7 @@
 			)
 		)
 		(property "Value" "D_Schottky_AAK"
-			(at 52.07 20.32 0)
+			(at 50.8 20.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8575,7 +8593,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TO-277A"
-			(at 49.53 24.13 0)
+			(at 48.26 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8586,7 +8604,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 49.53 24.13 0)
+			(at 48.26 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8597,7 +8615,7 @@
 			)
 		)
 		(property "Description" "Schottky diode, anode on pins 1 and 2"
-			(at 49.53 24.13 0)
+			(at 48.26 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

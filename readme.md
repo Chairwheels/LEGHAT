@@ -1,99 +1,56 @@
-# Raspberry Pi HAT+ Template
+# Raspberry Pi 5 Battery Power HAT
 
-With the relase of the Raspberry Pi 5, a new HAT form factor (HAT+) was introduced. It has cutouts for both a PCIe and two 4-lane CSI-2 camera ports.
+## Project Goal
 
-## Template Project
+Design a four-layer Raspberry Pi 5 HAT that converts a **33.3–37.8 V battery supply** into an adjustable 5 V rail for the Pi's 40-pin GPIO header.
 
-Minimum KiCAD version: 7.0.10
+The board is also intended to provide backfeed protection, connect two encoders and a load-cell DAQ over SPI, and provide a pushbutton with LEDs for the planned USB-control interface.
 
-![](img/HATPlus_Template.png)
+The design uses the **TRACO Power THN 30-4811WI** isolated DC/DC converter. Its 30 W rating limits total output power, so the final voltage and current targets must remain within the converter's datasheet ratings and derating requirements.
 
-Bottom-entry 2x20, 2.54mm SMD socket header: 
-- [Samtec HLE-120-02-L-DV-BE-A-K-TR](https://www.samtec.com/products/hle-120-02-l-dv-be-a-k-tr)
-- [WE 610040243021](https://www.we-online.com/en/components/products/PHD_2_54_SMT_DUAL_SOCKET_HEADER_BOTTOM_ENTRY_6100XX243021)
+## PCB Outline and Attribution
 
-Extender 2x20, 2.54mm socket header: 
-- [Samtec ESQ-120-14-G-D](https://www.samtec.com/standards/pc104/pc104)
-- [Sparkfun PRT-16764](https://www.mouser.com/ProductDetail/SparkFun/PRT-16764?qs=W%2FMpXkg%252BdQ4FKwyaXnhaEw%3D%3D)
+The PCB outline and Raspberry Pi 5 HAT+ mechanical template are based on [MisterHW/RPi5-HATplus](https://github.com/MisterHW/RPi5-HATplus), a KiCad HAT+ template by Helge Wurst.
 
-## Links
+The original outline was used as the starting point for this project. The power circuitry and peripheral interface are project-specific design work.
 
-HAT+ spec: https://datasheets.raspberrypi.com/hat/hat-plus-specification.pdf
+The original template is licensed under the [CERN Open Hardware Licence Version 2 — Strongly Reciprocal (CERN-OHL-S v2)](https://ohwr.org/cern_ohl_s_v2.txt). Refer to the original repository and license for applicable terms when using or redistributing derived hardware design files. The original project also requests that its source location be kept visible on the product's external case where practicable.
 
-RPi5 mechanical drawing: https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
+## Parts List
 
-HAT+ EEPROM: https://github.com/raspberrypi/utils/tree/master/eeptools
+**Note:** The PCB reference designators below are provisional. Verify them against the latest KiCad schematic and PCB before manufacturing.
 
-PCIe: https://datasheets.raspberrypi.com/pcie/pcie-connector-standard.pdf   
-(inofficial early work: https://github.com/m1geo/Pi5_PCIe)
+| PCB Designation | Part | Function |
+| --- | --- | --- |
+| J1 | Samtec SSW-120-01-F-D, 40-pin female header | Connects power, ground, SPI, and control signals to the Raspberry Pi 5 GPIO header. |
+| J2 | AMASS XT30UPB-F | Battery power input. |
+| F1 | Bel Fuse 0680L3000-05, 3 A candidate | Protects the battery input against overcurrent. |
+| D1 | Vishay SS5P10-M3/86A | Series Schottky diode for input polarity protection. |
+| D2 | Vishay SMCJ43A-E3/57T | TVS diode for transient suppression on the battery input. |
+| C1 | Samsung CL31B105KCHNNNE, 1 µF candidate | High-frequency input bypass capacitor. |
+| C2 | Panasonic EEEFK2A221AM, 220 µF candidate | Battery-side bulk input capacitance. |
+| U1 | TRACO Power THN 30-4811WI | Converts the battery voltage to a low-voltage supply using isolated DC/DC conversion. |
+| RV1 | Bourns 3224W-1-204E, 200 kΩ candidate | Adjusts the converter output through its trim circuit. |
+| R1 | Panasonic ERJPB3B4992V, 49.9 kΩ candidate | Fixed resistor in the converter trim network. |
+| C3 | Samsung CL32B226KAJNNNE, 22 µF candidate | Ceramic capacitance on the converter output. |
+| U2 | Analog Devices LTC4373IDD#PBF | Controls the ideal-diode/backfeed-protection stage. |
+| Q2 | Texas Instruments CSD18540Q5B | MOSFET used by the backfeed-protection stage. |
+| C4 | TDK C1005X7R1E104KT000F, 100 nF | Local bypass capacitor for the LTC4373 controller. |
+| C5, C6 | Panasonic 16SVPC100M, 100 µF candidates | Bulk capacitance before and after the MOSFET output-protection stage. |
+| J3 | Molex 55932-0810, 8-pin candidate | Connector for the encoder/DAQ interface, including SPI and peripheral power. |
+| C7 | Vishay VJ0603Y104JXQCW1BC, 100 nF | Local decoupling for the peripheral 3.3 V supply. |
+| C8 | Samsung CL10B105KP8NNNC, 1 µF | Additional decoupling for the peripheral 3.3 V supply. |
+| SW1 | Omron B3SL-1022P | Physical pushbutton for the planned USB-control interface. |
+| D3, D4 | Lite-On LTST-C191KRKT (red) and LTST-C191KGKT (green) | Indicators for the USB-control state. |
+| R2, R3 | Yageo AC0603FR-07470RL, 470 Ω candidates | LED current-limiting resistors. |
 
-## Mechanical Specification
+## Main Connections
 
-### Dimensions
+- **Power:** Battery input → fuse and input protection → isolated converter → output capacitance and backfeed protection → Raspberry Pi 5 V header.
+- **Grounds:** Keep the battery-side return (`BAT_NEG`) separate from the Pi-side return (`HAT_GND`) to preserve the converter's galvanic isolation.
+- **SPI:** Share SCLK, MOSI, and MISO between the peripherals, with separate chip-selects for each device (`ENC1_CS`, `ENC2_CS`, and `DAQ_CS`). The load cell connects to its DAQ board, not directly to the Pi.
+- **USB control:** The button and LEDs are intended for a software-controlled USB interface. They are not, by themselves, a safety-rated emergency-stop circuit.
 
-Board outline:
+## Project Status
 
-![](img/HAT+_dims.svg)
-
-Flexprint connector locations (with some dimensions added):
-
-![](img/RPi5_pos.svg)
-
-The exact center positions of the flex cables leaving the RPi5 board are needed to avoid vertical offset between connector pairs.
-
-While mostly cosmetic for long cables which can accommodate such offsets by twisting, short cables (<= 60 mm) may end up inserted askew.
-
-### Pinout
-
-#### GPIO
-
-![](img/GPIO-Pinout-Diagram-2.png)
-(source: [raspberrypi.com](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html))
-
-#### CSI-2
-
-Differential pairs are on the Pin-1 side and easily identified in context (22-pin to 15-pin flexprint adapter):
-
-![](img/CSI2_FFC_numbering.jpg)
-(adapted from: [thepihut](https://thepihut.com/blogs/raspberry-pi-tutorials/how-to-use-two-camera-modules-with-raspberry-pi-5))
-
-J3, J4 markings: Pin-22 side.
-
-Right-side contacts.
-
-#### PCIe
-
-Based on the image by [M1GEO] and subsequent official specification:
-
-![](img/RPi5_PCIe_pinout.svg)
-
-J20 marking: Pin-1 side.
-
-Right-side contacts.
-
-
-### Board Positions
-
-The alignments of PCIe and CSI-2 connectors are given in the User.Drawings layer.
-
-![](img/HATPlus_Template_dims.png)
-
-
-
-## License
-
-KiCad project: copyright Helge Wurst 2024.
-
-This source describes Open Hardware and is licensed under the CERN-OHL-S v2.
-
-You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern_ohl_s_v2.txt).
-
-This source is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for applicable conditions.
-
-Source location: https://github.com/MisterHW/RPi5-HATplus
-
-As per CERN-OHL-S v2 section 4, should You produce hardware based on this source, You must where practicable maintain the Source Location visible on the external case of the Gizmo or other products you make using this source.
-
-## Changes
-
-- 2024-03 initial release.
+This project is a work in progress. Verify the latest KiCad schematic, component datasheets, footprints, isolation clearances, connector pinouts, power ratings, and thermal requirements before manufacturing or applying power.
