@@ -1,5 +1,7 @@
 # Raspberry Pi 5 Battery Power HAT
 
+## This project was done in KiCad as I found it easier to work in and had more support throughout the industry as it is second in use only to Altium designer for PCB design tools.
+
 ## Project goal
 
 Design a four-layer Raspberry Pi 5 HAT that powers the Pi through its 40-pin header from a **33.3–37.8 V battery** instead of its USB-C power input. The board uses an isolated DC/DC converter, input protection, and a MOSFET-based backfeed protection stage. It also breaks out SPI for two encoders and a load-cell data-acquisition (DAQ) board, and includes a pushbutton and two LEDs for either USB shutdown or PI Shutdown.
