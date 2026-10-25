@@ -15,7 +15,7 @@ Design a four-layer Raspberry Pi 5 HAT that powers the Pi through its 40-pin hea
 
 ## Parts and PCB designations
 
-The designators below follow the current schematic and working parts list. Verify exact values, footprints, and manufacturer part numbers against the latest KiCad project before ordering.
+The designators below follow the current schematic and parts list. 
 
 | PCB designation | Part / selection | Function |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ The designators below follow the current schematic and working parts list. Verif
 
 ### Power path
 
-1. Battery positive enters at **J2 pin 2**, then passes through **F1** and **D1** to the positive input of **PS1**.
+1. Battery positive enters at **J2 pin 2**, then passes through **F1** and **D1** to the input of **PS1**.
 2. Battery negative enters at **J2 pin 1** and is labelled `Bat_Neg`. **D2**, **C1**, and **C2** are connected across the battery-side input as shown in the schematic.
 3. **PS1** provides isolated low-voltage output. The input side and output side are seperate circuits and have seperate ground planes on the inner copper layers of the PCB.
 4. **R1/RV1** form the converter trim network. 
@@ -69,7 +69,7 @@ This table records the signal order shown in the current schematic. It is the pi
 
 The two encoders and the DAQ share `SPI1_SCLK`, `SPI1_MOSI`, and `SPI1_MISO`; each device uses its own chip-select. The load cell connects to the DAQ, not directly to the Pi.
 
-### J1 — Raspberry Pi 40-pin header signals
+### J1 — Raspberry Pi 40-pin header Pinouts
 
 The Pi header assignments below use the standard Raspberry Pi 40-pin header pinout and the intended SPI1 mapping.
 
