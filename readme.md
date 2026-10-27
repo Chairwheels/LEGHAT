@@ -37,7 +37,7 @@ The designators below follow the current schematic and parts list.
 | J3 | Molex 55932-0810, 8-circuit MicroClasp header | Peripheral connector for 3.3 V, ground, SPI clock/data, and chip-select signals. |
 | C7 | Vishay VJ0603Y104JXQCW1BC, 100 nF | High frequency decoupling for the peripheral 3.3 V supply near J3. |
 | C8 | Samsung CL10B105KP8NNNC, 1 µF | Local decoupling for the peripheral 3.3 V supply near J3. |
-| SW1 | Omron B3SL-1022P candidate | Pushbutton for the planned shutdown interface. |
+| SW1 | Omron B3SL-1022P | Pushbutton for the planned shutdown interface. |
 | D3 | Lite-On LTST-C191KGKT, green LED | Green status indicator (`GREEN_LED`). |
 | D4 | Lite-On LTST-C191KRKT, red LED | Red status indicator (`RED_LED`). |
 | R2, R3 | Yageo AC0603FR-07470RL, 470 Ω | Current limiting resistors for the green and red LEDs. |
